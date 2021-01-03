@@ -1,8 +1,15 @@
 const express = require('express');
+const mongoose = require('mongoose');
     const app = express();
 
-        app.get('/', (request, response) => {
-            return response.json({ message: "Hello! =)" });
+        mongoose.connect('mongodb+srv://omnistack_dev:KcAtSiNm0O@omnistack9.pwlbv.mongodb.net/omnistack10', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
         });
 
-            app.listen(3333);
+            app.get('/', (request, response) => {
+                return response.json({ message: "Hello! =)" });
+            });
+
+                app.use(express.json);
+                app.listen(3333);
