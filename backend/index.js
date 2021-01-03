@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
     const app = express();
 
-        mongoose.connect('mongodb+srv://omnistack_dev:KcAtSiNm0O@omnistack9.pwlbv.mongodb.net/omnistack10', {
+        mongoose.connect('mongodb+srv://omnistack_dev:KcAtSiNm0O@mavericks.pwlbv.mongodb.net/omnistack10', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
