@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import api from './services/api';
 import './global.css';
 import './App.css';
 import './Sidebar.css';
 import './Main.css';
 
 function App() {
+  const [ devs, setDevs ] = useState([]);
   const [ github_username, setGithubUsername ] = useState('');
   const [ techs, setTechs ] = useState('');
   const [ latitude, setLatitude ] = useState('');
@@ -25,10 +27,20 @@ function App() {
           }
       )
     }, [] );
+    useEffect( () => {
+      async function loadDevs() {
+        const response = await api.get('/devs');
+          setDevs(response.data);
+      }
+        loadDevs();
+    }, [] );
 
       async function handleAddDev(e) {
         e.preventDefault();
-          
+          const response = await api.post('/devs', { github_username, techs, latitude, longitude });
+            setGithubUsername('');
+            setTechs('');
+            setDevs([ ...devs, response.data ]);
       }
 
         return (
@@ -59,50 +71,19 @@ function App() {
             </aside>
               <main>
                 <ul>
-                  <li className="dev-item">
-                    <header>
-                      <img src="https://avatars1.githubusercontent.com/u/52282116?s=460&u=4b1ca632b207c0133a3546fc41f5572f856b1065&v=4" alt="Alisson Prates Peres"/>
-                        <div className="user-info">
-                          <strong> Alisson Prates Peres </strong>
-                            <span> NodeJS, ReactJS, React Native </span>
-                        </div>
-                    </header>
-                      <p> code the world </p>
-                        <a href="https://github.com/alissonpratesperes"> Acessar Perfil no GitHub </a>
-                  </li>
-                  <li className="dev-item">
-                    <header>
-                      <img src="https://avatars1.githubusercontent.com/u/52282116?s=460&u=4b1ca632b207c0133a3546fc41f5572f856b1065&v=4" alt="Alisson Prates Peres"/>
-                        <div className="user-info">
-                          <strong> Alisson Prates Peres </strong>
-                            <span> NodeJS, ReactJS, React Native </span>
-                        </div>
-                    </header>
-                      <p> code the world </p>
-                        <a href="https://github.com/alissonpratesperes"> Acessar Perfil no GitHub </a>
-                  </li>
-                  <li className="dev-item">
-                    <header>
-                      <img src="https://avatars1.githubusercontent.com/u/52282116?s=460&u=4b1ca632b207c0133a3546fc41f5572f856b1065&v=4" alt="Alisson Prates Peres"/>
-                        <div className="user-info">
-                          <strong> Alisson Prates Peres </strong>
-                            <span> NodeJS, ReactJS, React Native </span>
-                        </div>
-                    </header>
-                      <p> code the world </p>
-                        <a href="https://github.com/alissonpratesperes"> Acessar Perfil no GitHub </a>
-                  </li>
-                  <li className="dev-item">
-                    <header>
-                      <img src="https://avatars1.githubusercontent.com/u/52282116?s=460&u=4b1ca632b207c0133a3546fc41f5572f856b1065&v=4" alt="Alisson Prates Peres"/>
-                        <div className="user-info">
-                          <strong> Alisson Prates Peres </strong>
-                            <span> NodeJS, ReactJS, React Native </span>
-                        </div>
-                    </header>
-                      <p> code the world </p>
-                        <a href="https://github.com/alissonpratesperes"> Acessar Perfil no GitHub </a>
-                  </li>
+                  { devs.map( dev => (
+                    <li key={ dev._id } className="dev-item">
+                      <header>
+                        <img src={ dev.avatar_url } alt={ dev.name }/>
+                          <div className="user-info">
+                            <strong> { dev.name } </strong>
+                              <span> { dev.techs.join(', ') } </span>
+                          </div>
+                      </header>
+                        <p> { dev.bio } </p>
+                          <a href={ `https://github.com/${ dev.github_username }` }> Acessar Perfil no GitHub </a>
+                    </li>
+                  ) ) }
                 </ul>
               </main>
           </div>
