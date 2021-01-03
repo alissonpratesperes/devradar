@@ -6,13 +6,6 @@ aside {
     padding: 30px 20px;
 }
 
-strong {
-    font-size: 20px;
-    text-align: center;
-    display: block;
-    color: #333333;
-}
-
 form {
     margin-top: 30px;
 }
@@ -65,4 +58,12 @@ aside form button[type=submit]:hover {
     background-color: #6931CA;
 }
 
-
+.brand {
+    width: 180px;
+    height: 50px;
+    background-image: url('./assets/devradar.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: auto;
+}

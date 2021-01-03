@@ -8,7 +8,7 @@ function App() {
   return (
     <div id="app">
       <aside>
-        <strong> Cadastrar </strong>
+        <div className="brand"> </div>
           <form>
             <div className="input-block">
               <label htmlFor="github_username"> Usuário do GitHub </label>
