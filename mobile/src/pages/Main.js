@@ -28,7 +28,6 @@ import api from '../services/api';
                     const { latitude, longitude } = currentRegion;
                     const response = await api.get('/search', { params: { latitude, longitude, techs } });
                         setDevs(response.data.devs);
-                        console.log(response.data.devs);
                 }
 
                 async function handleRegionChanged(region) {
