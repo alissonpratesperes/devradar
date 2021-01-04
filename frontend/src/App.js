@@ -4,8 +4,8 @@ import './global.css';
 import './App.css';
 import './Sidebar.css';
 import './Main.css';
-import DevForm from './components/DevForm/Index';
 import DevItem from './components/DevItem/Index';
+import DevForm from './components/DevForm/Index';
 
   function App() {
     const [ devs, setDevs ] = useState([]);

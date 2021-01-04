@@ -14,8 +14,8 @@ import './styles.css';
                         setLatitude(latitude);
                         setLongitude(longitude);
                     },
-                    (err) => {
-                        console.log(err);
+                    (error) => {
+                        console.log(error);
                     },
                         {
                         timeout: 30000,

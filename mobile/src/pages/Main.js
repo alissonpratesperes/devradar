@@ -4,7 +4,7 @@ import MapView, { Marker, Callout } from 'react-native-maps';
 import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
 import { MaterialIcons } from '@expo/vector-icons';
 import api from '../services/api';
-import socket, { connect, disconnect } from '../services/socket';
+import socket, { connect, disconnect, subscribeToNewDevs } from '../services/socket';
 
     function Main({ navigation }) {
         const [ devs, setDevs ] = useState([]);
@@ -25,9 +25,14 @@ import socket, { connect, disconnect } from '../services/socket';
                     loadInitialPosition();
             }, []);
 
+            useEffect( () => {
+                subscribeToNewDevs(dev => setDevs([...devs, dev]));
+            }, [ devs ]);
+
                 function setupWebSocket() {
-                    const { latitude, longitude } = currentRegion;
-                    connect( latitude, longitude, techs );
+                    disconnect();
+                        const { latitude, longitude } = currentRegion;
+                            connect( latitude, longitude, techs );
                 }
 
                 async function loadDevs() {
@@ -47,7 +52,7 @@ import socket, { connect, disconnect } from '../services/socket';
                             <>
                                 <MapView onRegionChangeComplete={ handleRegionChanged } initialRegion={ currentRegion } style={ styles.map }>
                                     { devs.map( dev => (
-                                        <Marker key={ dev._id } coordinate={ { longitude: dev.location.coordinates[0], latitude: dev.location.coordinates[1] } } onLoad={ () => this.forceUpdate() }> 
+                                        <Marker key={ dev._id } coordinate={ { latitude: dev.location.coordinates[1], longitude: dev.location.coordinates[0] } }> 
                                             <Image style={ styles.avatar } source={ { uri: dev.avatar_url } }/>
                                             
                                                 <Callout onPress={ () => { navigation.navigate('Profile', { github_username: dev.github_username }) } }>
@@ -62,7 +67,7 @@ import socket, { connect, disconnect } from '../services/socket';
                                 </MapView>
 
                                     <View style={ styles.searchForm }>
-                                        <TextInput style={ styles.searchInput } placeholder="Buscar desenvolvedores por tecnologias" placeholderTextColor="#ACACAC" autoCapitalize="words" autoCorrect={ false } value={techs}  onChangeText={setTechs}/>
+                                        <TextInput style={ styles.searchInput } placeholder="Buscar desenvolvedores por tecnologias" placeholderTextColor="#ACACAC" autoCapitalize="words" autoCorrect={ false } value={ techs }  onChangeText={ setTechs }/>
                                             <TouchableOpacity onPress={ loadDevs } style={ styles.loadButton }>
                                                 <MaterialIcons name="my-location" size={ 20 } color="#FFFFFF"/>
                                             </TouchableOpacity>
