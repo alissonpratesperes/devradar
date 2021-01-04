@@ -5,5 +5,9 @@ const socketio = require('socket.io');
 
             io.on('connection', socket => {
                 console.log(socket.id);
+                console.log(socket.handshake.query);
+                    setTimeout( () => {
+                        socket.emit('message', 'Hello OmniStack')
+                    }, 3000);
             });
     };

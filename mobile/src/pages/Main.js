@@ -26,7 +26,8 @@ import socket, { connect, disconnect } from '../services/socket';
             }, []);
 
                 function setupWebSocket() {
-                    connect();
+                    const { latitude, longitude } = currentRegion;
+                    connect( latitude, longitude, techs );
                 }
 
                 async function loadDevs() {
