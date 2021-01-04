@@ -43,7 +43,11 @@ import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location'
 
         const styles = StyleSheet.create({
             map: { flex: 1 },
-            avatar: { width: 54, height: 54, borderRadius: 4, borderWidth: 4, borderColor: '#FFFFFF' }
+            avatar: { width: 60, height: 60, borderRadius: 50, borderWidth: 2, borderColor: '#6931CA' },
+            callout: { width: 260 },
+            devName: { fontWeight: 'bold', fontSize: 20, color: '#333333' },
+            devBio: { color: "#666666", fontSize: 15, marginTop: 5 },
+            devTechs: { marginTop: 5, fontSize: 16, color: '#999999' }
         })
 
             export default Main;
