@@ -3,9 +3,12 @@ import { StyleSheet, Image, View, Text, TextInput, TouchableOpacity } from 'reac
 import MapView, { Marker, Callout } from 'react-native-maps';
 import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
 import { MaterialIcons } from '@expo/vector-icons';
+import api from '../services/api';
 
     function Main({ navigation }) {
+        const [ devs, setDevs ] = useState([]);
         const [ currentRegion, setCurrentRegion ] = useState(null);
+        const [ techs, setTechs ] = useState('');
 
             useEffect( () => {
                 async function loadInitialPosition() {
@@ -21,32 +24,45 @@ import { MaterialIcons } from '@expo/vector-icons';
                     loadInitialPosition();
             }, []);
 
-                if(!currentRegion) { return null; }
+                async function loadDevs() {
+                    const { latitude, longitude } = currentRegion;
+                    const response = await api.get('/search', { params: { latitude, longitude, techs } });
+                        setDevs(response.data.devs);
+                        console.log(response.data.devs);
+                }
 
-                    return (
-                        <>
-                            <MapView initialRegion={ currentRegion } style={ styles.map }>
-                                <Marker coordinate={ { latitude: -28.968055, longitude: -51.0509302 } } onLoad={ () => this.forceUpdate() }> 
-                                    <Image style={ styles.avatar } source={ { uri: 'https://avatars1.githubusercontent.com/u/52282116?s=460&u=4b1ca632b207c0133a3546fc41f5572f856b1065&v=4' } }/>
-                                        
-                                        <Callout onPress={ () => { navigation.navigate('Profile', { github_username: 'alissonpratesperes' }) } }>
-                                            <View style={ styles.callout }>
-                                                <Text style={ styles.devName }> Alisson Prates Peres </Text>
-                                                <Text style={ styles.devBio }> code the world </Text>
-                                                <Text style={ styles.devTechs }> NodeJS, ReactJS, React Native </Text>
-                                            </View>
-                                        </Callout>
-                                </Marker>
-                            </MapView>
+                async function handleRegionChanged(region) {
+                    setCurrentRegion(region);
+                }
 
-                                <View style={ styles.searchForm }>
-                                    <TextInput style={ styles.searchInput } placeholder="Buscar desenvolvedores por tecnologias" placeholderTextColor="#ACACAC" autoCapitalize="words" autoCorrect={ false }/>
-                                        <TouchableOpacity onPress={ () => {} } style={ styles.loadButton }>
-                                            <MaterialIcons name="my-location" size={ 20 } color="#FFFFFF"/>
-                                        </TouchableOpacity>
-                                </View>
-                        </>
-                    );
+                    if(!currentRegion) { return null; }
+
+                        return (
+                            <>
+                                <MapView onRegionChangeComplete={ handleRegionChanged } initialRegion={ currentRegion } style={ styles.map }>
+                                    { devs.map( dev => (
+                                        <Marker key={ dev._id } coordinate={ { longitude: dev.location.coordinates[0], latitude: dev.location.coordinates[1] } } onLoad={ () => this.forceUpdate() }> 
+                                            <Image style={ styles.avatar } source={ { uri: dev.avatar_url } }/>
+                                            
+                                                <Callout onPress={ () => { navigation.navigate('Profile', { github_username: dev.github_username }) } }>
+                                                    <View style={ styles.callout }>
+                                                        <Text style={ styles.devName }> { dev.name } </Text>
+                                                        <Text style={ styles.devBio }> { dev.bio } </Text>
+                                                        <Text style={ styles.devTechs }> { dev.techs.join(', ') } </Text>
+                                                    </View>
+                                                </Callout>
+                                        </Marker>
+                                    ) ) }
+                                </MapView>
+
+                                    <View style={ styles.searchForm }>
+                                        <TextInput style={ styles.searchInput } placeholder="Buscar desenvolvedores por tecnologias" placeholderTextColor="#ACACAC" autoCapitalize="words" autoCorrect={ false } value={techs}  onChangeText={setTechs}/>
+                                            <TouchableOpacity onPress={ loadDevs } style={ styles.loadButton }>
+                                                <MaterialIcons name="my-location" size={ 20 } color="#FFFFFF"/>
+                                            </TouchableOpacity>
+                                    </View>
+                            </>
+                        );
     }
 
         const styles = StyleSheet.create({
