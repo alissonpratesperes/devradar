@@ -20,6 +20,7 @@ import Profile from './pages/Profile';
         }, {
             defaultNavigationOptions: {
                 headerTintColor: '#FFFFFF',
+                headerBackTitleVisible: false,
                 headerStyle: {
                     backgroundColor: '#7D40E7',
                 }
