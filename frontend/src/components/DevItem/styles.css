@@ -1,0 +1,70 @@
+li.dev-item {
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.1s;
+}
+
+li.dev-item header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+li.dev-item header img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 2px;
+    border: 2px solid #FFFFFF;
+    transition: all 0.15s ease-in-out;
+    transition-property: border;
+}
+
+li.dev-item:hover img {
+    border: 2px solid #000000;
+}
+
+li.dev-item header .user-info {
+    margin-left: 20px;
+}
+
+.user-info strong {
+    display: block;
+    font-size: 17px;
+    color: #333333;
+}
+
+.user-info span {
+    font-size: 15px;
+    color: #999999;
+}
+
+li.dev-item p {
+    color: #666666;
+    font-size: 15px;
+    line-height: 20px;
+    margin: 15px 0px;
+}
+
+li.dev-item a {
+    color: #FFFFFF;
+    background-color: #8E4DFF;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 10px 10px;
+    border-radius: 7.5px;
+    margin-left: 130px;
+    transition: all 0.3s;
+    transition-property: background-color;
+}
+
+li.dev-item a span {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+li.dev-item a:hover {
+    background-color: #5A2EA6;
+}
