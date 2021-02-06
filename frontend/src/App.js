@@ -31,9 +31,7 @@ import DevForm from './components/DevForm';
               </aside>
                 <main>
                   <ul>
-                    {devs.map(dev => (
-                      <DevItem key={dev._id} dev={dev}/>
-                    ))}
+                    {devs.map(dev => ( <DevItem key={dev._id} dev={dev}/> ))}
                   </ul>
                 </main>
             </div>
