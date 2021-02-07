@@ -24,7 +24,7 @@ ___
 
 <br/>
 
-<p align="center"> <img src="github/devradar_dashboard.jpg" width="100%"> </p>
+<p align="center"> <img src="github/devradar_dashboard.png" width="100%"> </p>
 
 <br/>
 
