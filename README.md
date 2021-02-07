@@ -57,3 +57,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Projeto desenvolvido durante a **Semana OmniStack 9** da <a href="https://rocketseat.com.br/">Rocketseat</a>, ocorrida em **Outubro de 2019**;
 
 - Acesse  <a href="https://github.com/rocketseat-education/semana-omnistack-10">aqui</a> o **repositório oficial** da aplicação.
+
+## :memo: Licença
+
+Esse projeto está sob a **Licença MIT**. Veja o arquivo [LICENSE](https://github.com/alissonpratesperes/devradar/blob/main/LICENSE) para mais detalhes.
+
+---
+
+<h5 align="center">  ✍🏻&nbsp; &nbsp;na &nbsp;👋🏻&nbsp;  por <a href="https://github.com/alissonpratesperes"> Alisson Prates Peres </a> &nbsp;👨🏻‍💻 </h5>
