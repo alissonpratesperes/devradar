@@ -2,4 +2,4 @@
 
 ___
 
-<p align="center">  🧑🏻‍💻&nbsp;&nbsp;DevRadar&nbsp;📍  </p>
+<p align="center">  🧑🏻‍💻&nbsp;&nbsp;DevRadar📍  </p>
