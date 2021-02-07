@@ -21,3 +21,11 @@ ___
 <a href="#fuelpump-autor">Autor</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#memo-licença">Licença</a>
 </p>
+
+<br/>
+
+<p align="center"> <img src="github/devradar_dashboard.jpg" width="100%"> </p>
+
+<br/>
+
+
