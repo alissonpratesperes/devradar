@@ -54,7 +54,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Execute o *Mobile:* **cd . . > enter > cd mobile > npm/yarn install > enter > concluído? > code .**. No *VS Code* acesse o arquivo **src/services/api.js** e configure o **IP da API**; Acesse o arquivo **src/services/socket.js** e configure o **IP dos WebSockets**. Rode o *Mobile* com o comando **npm/yarn start**;
 ## :fuelpump: Autor
 
-- Projeto desenvolvido durante a **Semana OmniStack 9** da <a href="https://rocketseat.com.br/">Rocketseat</a>, ocorrida em **Outubro de 2019**;
+- Projeto desenvolvido durante a **Semana OmniStack 10** da <a href="https://rocketseat.com.br/">Rocketseat</a>, ocorrida em **Janeiro de 2020**;
 
 - Acesse  <a href="https://github.com/rocketseat-education/semana-omnistack-10">aqui</a> o **repositório oficial** da aplicação.
 
