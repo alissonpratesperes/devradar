@@ -31,3 +31,14 @@ ___
 ## :dart: Sobre
 
 O **DevRadar** é um projeto que visa conectar desenvolvedores próximos a você que trabalham com as mesmas tecnologias.
+
+## :battery: Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- <a href="https://www.npmjs.com/">Npm</a> / <a href="https://yarnpkg.com/">Yarn</a>
+- <a href="https://nodejs.org/en">NodeJS</a>
+- <a href="https://www.mongodb.com/">MongoDB</a>
+- <a href="https://reactjs.org/">ReactJS</a>
+- <a href="https://reactnative.dev/">React Native</a>
+- <a href="https://expo.io/">Expo</a>
