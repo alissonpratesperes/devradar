@@ -2,7 +2,6 @@
 
 ___
 
-<p align="center"> 🧑🏻‍💻&nbsp;&nbsp;DevRadar📍</p>
 <p align="center">
 <img alt="Event Name" src="https://img.shields.io/badge/omnistack-week%2010-%237D40E7"/>
 <img alt="GitHub Language Count" 		  src="https://img.shields.io/github/languages/count/alissonpratesperes/devradar?color=7D40E7"/>
