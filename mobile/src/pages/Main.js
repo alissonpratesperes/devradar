@@ -17,13 +17,11 @@ import { subscribeToNewDevs, connect, disconnect } from '../services/socket';
                             if(granted) { 
                                 const { coords } = await getCurrentPositionAsync({ enableHighAccuracy: true }); 
                                 const { latitude, longitude } = coords;
-
                                     setCurrentRegion({ latitude, longitude, latitudeDelta: 0.04, longitudeDelta: 0.04 });
                             }
                     }
                         loadInitialPosition();
                 }, []);
-
                 useEffect(() => {
                     subscribeToNewDevs(dev => setDevs([ ...devs, dev ]));
                 }, [devs]);
@@ -33,19 +31,17 @@ import { subscribeToNewDevs, connect, disconnect } from '../services/socket';
                             const { latitude, longitude } = currentRegion;
                                 connect(latitude, longitude, techs);
                     }
+                    async function loadDevs() {
+                        const { latitude, longitude } = currentRegion;
+                        const response = await api.get('/search', { params: { latitude, longitude, techs } });
+                            setDevs(response.data.devs);
+                                setupWebsocket();
+                    }
+                    function handleRegionChanged(region) {
+                        setCurrentRegion(region);
+                    }
 
-                        async function loadDevs() {
-                            const { latitude, longitude } = currentRegion;
-                            const response = await api.get('/search', { params: { latitude, longitude, techs } });
-                                setDevs(response.data.devs);
-                                    setupWebsocket();
-                        }
-
-                        function handleRegionChanged(region) {
-                            setCurrentRegion(region);
-                        }
-
-                            if(!currentRegion) { return null; }
+                        if(!currentRegion) { return null; }
 
             return (
                 <>
@@ -135,7 +131,7 @@ import { subscribeToNewDevs, connect, disconnect } from '../services/socket';
                 borderTopRightRadius: 10,
                 borderBottomRightRadius: 10,
                 justifyContent: 'center',
-                alignItems: 'center',
+                alignItems: 'center'
             }
         });
 
