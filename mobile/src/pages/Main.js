@@ -74,10 +74,10 @@ import { subscribeToNewDevs, connect, disconnect } from '../services/socket';
                 flex: 1
             },
             avatar: {
-                width: 60,
-                height: 60,
+                width: 70,
+                height: 70,
                 borderRadius: 50,
-                borderWidth: 2,
+                borderWidth: 3,
                 borderColor: '#000000'
             },
             callout: {
@@ -105,12 +105,11 @@ import { subscribeToNewDevs, connect, disconnect } from '../services/socket';
                 top: 20,
                 zIndex: 5,
                 flexDirection: 'row',
-                borderRadius: 50,
                 shadowColor: '#000000',
-                shadowOpacity: 0.15,
+                shadowOpacity: 0.05,
                 shadowOffset: {
-                    width: 2,
-                    height: 2
+                    width: 5,
+                    height: 5
                 },
                 elevation: 2
             },
@@ -121,7 +120,7 @@ import { subscribeToNewDevs, connect, disconnect } from '../services/socket';
                 color: '#333333',
                 borderTopLeftRadius: 10,
                 borderBottomLeftRadius: 10,
-                paddingHorizontal: 20,
+                paddingHorizontal: 15,
                 fontSize: 14
             },
             loadButton: {
