@@ -13,13 +13,10 @@ import './styles.css';
                         const { latitude, longitude } = position.coords;
                             setLatitude(latitude);
                             setLongitude(longitude);
-                }, (error) => {
-                    console.log(error);
-                }, {
-                    timeout: 30000
-                }
-                )
-            }, []);
+                    }, (error) => {
+                        console.log(error);
+                }, { timeout: 30000 }
+                )}, []);
 
                 async function handleSubmit(e) {
                     e.preventDefault();
