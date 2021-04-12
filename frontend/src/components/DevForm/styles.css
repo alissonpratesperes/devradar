@@ -9,8 +9,8 @@ aside form .input-block + .input-block {
 aside form .input-group {
     margin-top: 25px;
     display: grid;
-    gap: 25px;
-    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
 }
 
 aside form .input-group .input-block {
