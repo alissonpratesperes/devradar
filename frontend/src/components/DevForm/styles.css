@@ -10,7 +10,7 @@ aside form .input-group {
     margin-top: 25px;
     display: grid;
     gap: 25px;
-    grid-template-columns: 1fr 1fr;  
+    grid-template-columns: 1fr 1fr; 
 }
 
 aside form .input-group .input-block {
@@ -30,6 +30,9 @@ aside form .input-block input {
     color: #000000;
     border: 0px;
     border-bottom: 1px solid #EEEEEE;
+    padding: 0px 15px;
+    transition: all 0.3s;
+    transition-property: border;
 }
 
 aside form input:focus {
