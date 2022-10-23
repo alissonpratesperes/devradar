@@ -23,3 +23,18 @@
     <br/>
 
 <p align="center"> <img src="github/devradar_dashboard.png" width="100%"/> </p>
+
+## :dart: Sobre
+A **DevRadar** é uma Aplicação que visa conectar desenvolvedores próximos a você que trabalham com as mesmas tecnologias.
+
+## :battery: Tecnologias
+Essa Aplicação foi desenvolvida utilizando as seguintes tecnologias:
+
+- <a href="https://insomnia.rest/">Insomnia</a>
+- <a href="https://mongodb.com/">Mongo DB</a>
+- <a href="https://nodejs.org/">NodeJS</a>
+- <a href="https://socket.io/">Socket IO</a>
+- <a href="https://reactjs.org/">ReactJS</a>
+- <a href="https://axios-http.com/">Axios</a>
+- <a href="https://expo.dev/">Expo IO</a>
+- <a href="https://reactnative.dev/">React Native</a>
