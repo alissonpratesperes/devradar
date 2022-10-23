@@ -3,3 +3,13 @@
     <img src="github/devradar_logo.svg" width="30%"/>
 </p>
     <br/>
+<p align="center">
+    <img alt="Course Event" src="https://img.shields.io/badge/omnistack-week%2010-%237D40E7"/>
+    <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/alissonpratesperes/devradar?color=7D40E7"/>
+        <a href="https://github.com/alissonpratesperes/devradar/search?l=javascript"><img alt="Top Language" src="https://img.shields.io/github/languages/top/alissonpratesperes/devradar?color=7D40E7"/></a>
+    <img alt="GitHub Repository Size" src="https://img.shields.io/github/repo-size/alissonpratesperes/devradar?color=7D40E7"/>
+    <img alt="GitHub Code Size" src="https://img.shields.io/github/languages/code-size/alissonpratesperes/devradar?color=7D40E7"/>
+        <a href="https://github.com/alissonpratesperes/devradar/commits/main"><img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/alissonpratesperes/devradar?color=7D40E7"/></a>
+        <a href ="https://github.com/alissonpratesperes/devradar/blob/main/LICENSE"><img alt="GitHub License" src="https://img.shields.io/badge/license-MIT-7D40E7"/></a>
+</p>
+    </br>
