@@ -48,3 +48,7 @@ Acesse  <a href="https://github.com/rocketseat-education/semana-omnistack-10">aq
 ## :memo: Licença
 
 Esse projeto está sob a **Licença MIT**. Veja o arquivo [LICENSE](https://github.com/alissonpratesperes/devradar/blob/main/LICENSE) para mais detalhes.
+
+___
+
+<h5 align="center">👨🏻‍💻&nbsp;com&nbsp;💜&nbsp;por&nbsp;<a href="https://github.com/alissonpratesperes">Alisson Prates Peres</a>&nbsp;✌🏻😗</h5>
