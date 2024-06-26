@@ -26,7 +26,7 @@ TOOLING | <a href="https://insomnia.rest/">Insomnia</a> • <a href="https://exp
 
 DATABASE | <a href="https://mongodb.com/">MongoDB</a>
 
-INTEGRATION | <a href="https://socket.io/">Socket IO</a> • <a href="https://axios-http.com/">Axios</a>
+INTEGRATION | <a href="https://axios-http.com/">Axios</a> • <a href="https://socket.io/">Socket IO</a>
 
 BACK-END | <a href="https://nodejs.org/">NodeJS</a>
 
@@ -53,7 +53,7 @@ MOBILE | <a href="https://reactnative.dev/">React Native</a>
 
 ## AUTOR
 
-Projeto desenvolvido durante a **Semana OmniStack 10** da <a href="https://rocketseat.com.br/">Rocketseat</a> ocorrida em **Janeiro de 2020**
+Projeto desenvolvido durante a **Omni Stack Week 10** da <a href="https://rocketseat.com.br/">Rocketseat</a> ocorrida em **Janeiro de 2020**
 
 Acesse <a href="https://github.com/rocketseat-education/semana-omnistack-10">aqui</a> o **repositório oficial** do Projeto
 
